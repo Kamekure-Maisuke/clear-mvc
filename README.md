@@ -10,7 +10,7 @@
 
 ```bash
 $ docker-compose up -d
-$ docker-compose exec app composer create-project --prefer-dist laravel/lumen sample_project
+$ docker-compose exec app composer create-project --prefer-dist laravel/lumen .
 ```
 
 - `localhost:8080`を確認。
