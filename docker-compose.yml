@@ -1,17 +1,18 @@
-version: "3.7"
+version: "3"
 
 services:
   web:
-    image: nginx:latest
+    image: nginx
     ports:
-      - "8080:80"
+      - 8080:80
     volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
+      - ./default.conf:/etc/nginx/conf.d/default.conf
       - ./src:/var/www/html/src
+    restart: always
     depends_on:
-      - app
+      - php
 
-  app:
+  php:
     build: .
     volumes:
       - ./src:/var/www/html/src

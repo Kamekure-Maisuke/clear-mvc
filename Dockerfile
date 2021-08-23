@@ -1,6 +1,6 @@
 FROM clearlinux/php-fpm
 
-RUN swupd bundle-add php-extras zip \
+RUN swupd bundle-add php-extras unzip \
     && rm -rf /var/lib/swupd/*
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
