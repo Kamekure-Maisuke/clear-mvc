@@ -1,18 +1,17 @@
-version: "3"
+version: "3.7"
 
 services:
   web:
-    image: nginx
+    image: nginx:latest
     ports:
       - "8080:80"
     volumes:
-      - ./default.conf:/etc/nginx/conf.d/default.conf
-      - ./src:/var/www/html/myapp
+      - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
+      - ./src:/var/www/html/src
     depends_on:
-      - php
+      - app
 
   app:
     build: .
     volumes:
-      # ホストの./myappフォルダを同期
       - ./src:/var/www/html/src
