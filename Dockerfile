@@ -5,4 +5,4 @@ RUN swupd bundle-add php-extras zip \
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
-WORKDIR /var/www/html/myapp
+WORKDIR /var/www/html/src
